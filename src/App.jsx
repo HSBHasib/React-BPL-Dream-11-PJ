@@ -1,10 +1,9 @@
-import React from 'react'
-import Navber from './components/Navber/Navber'
+import TopSection from './components/TopSection/TopSection'
 
 const App = () => {
   return (
     <div>
-      <Navber />
+      <TopSection />
     </div>
   )
 }
