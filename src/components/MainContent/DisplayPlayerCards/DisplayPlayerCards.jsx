@@ -29,7 +29,7 @@ const DisplayPlayerCards = ({playerData}) => {
                 <hr className='text-gray-300 my-1' />
                 
                 <div className='flex justify-self-start items-center gap-1.5 font-bold'>
-                    <h2 className="text-[16px]">Rating 0</h2>
+                    <h2 className="text-[16px]">Rating {playerData.rating}</h2>
                 </div>
                 <div className='flex justify-between items-center'>
                     <h1 className='text-[16px] font-semibold'>{playerData.battingStyle}</h1>
