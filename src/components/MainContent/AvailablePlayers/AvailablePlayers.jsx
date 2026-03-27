@@ -24,7 +24,8 @@ const AvailablePlayers = ({player}) => {
                     <button className='btn border-none rounded-lg font-medium px-5'>All-Rounder</button>
                 </div>
                 
-                {/* <div className="divider"></div> */}
+                
+                <hr className='text-gray-300 my-1' />
                 
                 <div className='flex justify-self-start items-center gap-1.5 font-bold'>
                     <h2 className="text-[16px]">Rating</h2>
@@ -45,41 +46,6 @@ const AvailablePlayers = ({player}) => {
 
 
                  
-            </div>
-        </div>
-
-        <div className="card bg-base-100 shadow-sm rounded-2xl">
-            <figure className='p-4'>
-                <img
-                className='w-full h-60 object-cover  rounded-xl'
-                src={player[0].playerImg}
-                alt="Shoes" />
-            </figure>
-            <div className="card-body">
-                <h2 className="card-title">Card Title</h2>
-                <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                <div className="card-actions justify-end">
-                <button className="btn btn-primary">Buy Now</button>
-                </div>
-            </div>
-        </div>
-
-        <div className="card bg-base-100 shadow-sm rounded-2xl">
-            <figure className='p-4'>
-                <img
-                className='w-full h-60 object-cover  rounded-xl'
-                src={player[0].playerImg}
-                alt="Shoes" />
-            </figure>
-            <div className="card-body">
-                <div>
-                    <h2><UserPen /></h2>
-                </div>
-                <h2 className="card-title">Card Title</h2>
-                <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                <div className="card-actions justify-end">
-                <button className="btn btn-primary">Buy Now</button>
-                </div>
             </div>
         </div>
     </div>
