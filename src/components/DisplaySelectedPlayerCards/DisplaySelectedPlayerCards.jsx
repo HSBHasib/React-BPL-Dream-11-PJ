@@ -1,7 +1,7 @@
 import { IoIosPerson } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 
-const DisplaySelectedPlayerCards = ({selectedPlayerData, setSelectedPlayer, handleDeleteSeletedPlayer}) => {
+const DisplaySelectedPlayerCards = ({selectedPlayerData, handleDeleteSeletedPlayer}) => {
   return (
     <div>
       <div className='border border-gray-300 rounded-lg flex justify-between items-center p-3 mb-3'>
@@ -26,3 +26,4 @@ const DisplaySelectedPlayerCards = ({selectedPlayerData, setSelectedPlayer, hand
 }
 
 export default DisplaySelectedPlayerCards
+

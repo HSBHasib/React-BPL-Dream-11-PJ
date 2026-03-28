@@ -1,30 +1,21 @@
 import React, { useState } from 'react'
 import { Flag, UserPen } from 'lucide-react';
+import { toast } from 'react-toastify';
+
 const DisplayPlayerCards = ({playerData, coin, setCoin, setSelectedPlayer, selectedPlayer}) => {
-    const [isSelected, setIsSelected] = useState(false);
-    // const [showAlert, setShowAlert] = useState(null);
-    
+    const [isSelected, setIsSelected] = useState(false);    
     
     const handleSelectedBtn = () => {
         if(coin > playerData.price) {
-            alert(`${playerData.playerName} selected successfully!`);
-            
+            toast(`${playerData.playerName} selected successfully!`);
             setIsSelected(true);
             setCoin(coin - playerData.price);
 
             setSelectedPlayer([...selectedPlayer, playerData]); 
         } else {
-            alert('Not enough coins to select this player!');
+            toast(`Not enough coins to select this player!`);
             return;
         }
-
-        // <div role="alert" className="alert alert-error alert-soft">
-        //     <span>{playerData.playerName} selected successfully!</span>
-        // </div>
-        
-        // <div role="alert" className="alert alert-success alert-soft">
-        //     <span>Not enough coins to select this player!</span>
-        // </div>
     }
 
     
