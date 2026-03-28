@@ -1,7 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Flag, UserPen } from 'lucide-react';
-const DisplayPlayerCards = ({playerData}) => {
+const DisplayPlayerCards = ({playerData, coin, setCoin}) => {
     console.log(playerData);
+    const [isSelected, setIsSelected] = useState(false);
+    const [showAlert, setShowAlert] = useState(null);
+    
+    
+    const handleSelectedBtn = () => {
+        if(coin > playerData.price) {
+            alert(`${playerData.playerName} selected successfully!`);
+            
+            setIsSelected(true);
+            setCoin(coin - playerData.price);
+        } else {
+            alert('Not enough coins to select this player!');
+            // <div role="alert" className="alert alert-error alert-soft">
+            //     <span>{playerData.playerName} selected successfully!</span>
+            // </div>
+            
+            // <div role="alert" className="alert alert-success alert-soft">
+            //     <span>Not enough coins to select this player!</span>
+            // </div>
+        }
+    }
     
   return (
     <div>
@@ -40,7 +61,11 @@ const DisplayPlayerCards = ({playerData}) => {
                     <div className='flex justify-self-start items-center gap-2.5'>
                         <h1 className='text-[17px] text-[#898989] text-[16px]'>Price: ${playerData.price}</h1>
                     </div>
-                    <button className='border-1 px-4 py-1.5 border-gray-200 rounded-lg active:scale-95 cursor-pointer '>Choose Player</button>
+                    <button className={`border px-4 py-1.5 border-gray-200 rounded-lg active:scale-95 cursor-pointer
+                        ${isSelected ? 'bg-gray-300 cursor-not-allowed opacity-50 active:scale-none' : 'hover:bg-gray-50'} `} 
+                        // onClick={() => setIsSelected(true)}
+                        onClick={() => handleSelectedBtn()}
+                    disabled={isSelected}  >{isSelected ? 'Selected' : 'Choose Player'}</button>
                 </div>   
             </div>
         </div>

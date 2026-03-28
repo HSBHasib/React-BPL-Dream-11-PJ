@@ -1,6 +1,6 @@
 import navLogo from '../../assets/Images/logo.png';
 import coinLogo from '../../assets/Images/Coin.png';
-const Navber = () => {
+const Navber = ({coin}) => {
   return (
     <div>
       <div className="navbar bg-base-100 shadow-sm px-8">
@@ -19,7 +19,7 @@ const Navber = () => {
 
             <div className="flex-no">
                 <button className="btn border-1 rounded-xl border-gray-200 font-bold">
-                    0 Coin <img className='object-cover' src={coinLogo} alt="" />
+                  ${coin} Coin <img className='object-cover' src={coinLogo} alt="" />
                 </button>
             </div>
         </div>

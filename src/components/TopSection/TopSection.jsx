@@ -1,10 +1,11 @@
 import Banner from '../Banner/Banner'
 import Navber from '../Navber/Navber'
 
-const TopSection = () => {
+const TopSection = ({coin}) => {
+  
   return (
     <div>
-      <Navber />
+      <Navber coin={coin} />
       <Banner />
     </div>
   )
