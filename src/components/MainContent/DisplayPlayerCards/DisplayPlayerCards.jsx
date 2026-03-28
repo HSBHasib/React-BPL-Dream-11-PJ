@@ -67,7 +67,6 @@ const DisplayPlayerCards = ({playerData, coin, setCoin, setSelectedPlayer, selec
                     </div>
                     <button className={`border px-4 py-1.5 border-gray-200 rounded-lg active:scale-95 cursor-pointer
                         ${isSelected ? 'bg-gray-300 cursor-not-allowed opacity-50 active:scale-none' : 'hover:bg-gray-50'} `} 
-                        // onClick={() => setIsSelected(true)}
                         onClick={() => handleSelectedBtn()}
                     disabled={isSelected}  >{isSelected ? 'Selected' : 'Choose Player'}</button>
                 </div>   

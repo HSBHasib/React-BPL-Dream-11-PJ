@@ -28,7 +28,7 @@ const Players = ({playerData, coin, setCoin}) => {
       <div>
         {
           selectedType === 'available' ? <AvailablePlayers player={player} coin={coin} setCoin={setCoin} selectedPlayer={selectedPlayer} setSelectedPlayer={setSelectedPlayer} /> 
-          : <SelectedPlayers player={player} selectedPlayer={selectedPlayer} />
+          : <SelectedPlayers player={player} selectedPlayer={selectedPlayer} setSelectedPlayer={setSelectedPlayer} coin={coin} setCoin={setCoin} />
         }
       </div>
     </div>
