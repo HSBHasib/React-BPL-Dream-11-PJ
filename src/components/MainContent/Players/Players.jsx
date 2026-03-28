@@ -1,11 +1,34 @@
 import React, { use } from 'react'
 import AvailablePlayers from '../AvailablePlayers/AvailablePlayers';
+import SelectedPlayers from '../SelectedPlayers/SelectedPlayers';
+import { useState } from 'react';
 
 const Players = ({playerData}) => {
   const player = use(playerData);
+  const [selectedType, setSelectedType] = useState('available');
+
   return (
-    <div>
-      <AvailablePlayers player={player} />
+    <div className='px-8'>
+      
+      {/* Available Changing Option */}
+        <div className='pb-6 pt-1 flex justify-between items-center'>
+            <h1 className='text-2xl font-bold'> {selectedType ===  `available` ? `Available Players` : `Selected(2/${player.length})`}</h1>
+            <div className='flex border rounded-xl border-gray-300'>
+                <button onClick={() => setSelectedType('available')} className={`px-4 py-1.5  
+                    ${selectedType === 'available' ? 'bg-[#E7FE29]' : 'bg-white text-[#717171] font-normal'} 
+                    rounded-xl rounded-r-none font-semibold cursor-pointer`}>Available</button>
+
+                <button onClick={() => setSelectedType('selected')} className={`px-4 py-1.5  rounded-xl rounded-l-none 
+                    ${selectedType === 'selected' ? 'bg-[#E7FE29] font-semibold text-black' : 'bg-white text-[#717171]'}
+                text-[#717171] cursor-pointer`}>Selected (0)</button>
+            </div>
+        </div>
+
+      <div>
+        {
+          selectedType === 'available' ? <AvailablePlayers player={player} /> : <SelectedPlayers player={player} />
+        }
+      </div>
     </div>
   )
 }
