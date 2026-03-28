@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { Flag, UserPen } from 'lucide-react';
-const DisplayPlayerCards = ({playerData, coin, setCoin}) => {
-    console.log(playerData);
+const DisplayPlayerCards = ({playerData, coin, setCoin, setSelectedPlayer, selectedPlayer}) => {
     const [isSelected, setIsSelected] = useState(false);
-    const [showAlert, setShowAlert] = useState(null);
+    // const [showAlert, setShowAlert] = useState(null);
     
     
     const handleSelectedBtn = () => {
@@ -12,17 +11,22 @@ const DisplayPlayerCards = ({playerData, coin, setCoin}) => {
             
             setIsSelected(true);
             setCoin(coin - playerData.price);
+
+            setSelectedPlayer([...selectedPlayer, playerData]); 
         } else {
             alert('Not enough coins to select this player!');
-            // <div role="alert" className="alert alert-error alert-soft">
-            //     <span>{playerData.playerName} selected successfully!</span>
-            // </div>
-            
-            // <div role="alert" className="alert alert-success alert-soft">
-            //     <span>Not enough coins to select this player!</span>
-            // </div>
+            return;
         }
+
+        // <div role="alert" className="alert alert-error alert-soft">
+        //     <span>{playerData.playerName} selected successfully!</span>
+        // </div>
+        
+        // <div role="alert" className="alert alert-success alert-soft">
+        //     <span>Not enough coins to select this player!</span>
+        // </div>
     }
+
     
   return (
     <div>
