@@ -7,17 +7,15 @@ const DisplayPlayerCards = ({playerData, coin, setCoin, setSelectedPlayer, selec
     
     const handleSelectedBtn = () => {
         if(coin > playerData.price) {
-            toast(`${playerData.playerName} selected successfully!`);
+            toast.success(`${playerData.playerName} selected successfully!`);
             setIsSelected(true);
             setCoin(coin - playerData.price);
-
             setSelectedPlayer([...selectedPlayer, playerData]); 
         } else {
-            toast(`Not enough coins to select this player!`);
+            toast.error(`Not enough coins to select this player!`);
             return;
         }
     }
-
     
   return (
     <div>

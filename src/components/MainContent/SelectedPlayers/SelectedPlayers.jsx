@@ -12,9 +12,12 @@ const SelectedPlayers = ({selectedPlayer, setSelectedPlayer, coin, setCoin}) => 
   return (
     <div>
         {
-          // selectedPlayer.map((selectedPlayerData, idx) => <DisplaySelectedPlayerCards  key={idx}
-          // handleDeleteSeletedPlayer={handleDeleteSeletedPlayer} selectedPlayerData={selectedPlayerData} />)
-          selectedPlayer.map((selectedPlayerData, idx) => <DisplaySelectedPlayerCards  key={idx}
+          selectedPlayer.length === 0 ? 
+          <div className='flex flex-col justify-center items-center py-30 space-y-1'>
+            <h1 className='font-bold text-3xl '>No player selected yet</h1>
+            <p className='text-gray-500 text-[15px]'>Go to available tab to select players</p> 
+          </div>
+          : selectedPlayer.map((selectedPlayerData, idx) => <DisplaySelectedPlayerCards  key={idx}
           handleDeleteSeletedPlayer={handleDeleteSeletedPlayer} selectedPlayerData={selectedPlayerData} />)
         }
     </div>

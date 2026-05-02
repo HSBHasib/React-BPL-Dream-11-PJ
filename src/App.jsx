@@ -7,7 +7,7 @@ import { ToastContainer } from 'react-toastify';
 const fetchPlayerData = fetch('/data.json').then(res => res.json());
 
 const App = () => {
-  const [coin, setCoin] = useState(30000);
+  const [coin, setCoin] = useState(20000);
   return (
     <div>
       <TopSection coin={coin} setCoin={setCoin}  />
