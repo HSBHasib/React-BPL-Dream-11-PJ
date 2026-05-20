@@ -47,7 +47,7 @@ BPL Dream is a sports centric web application designed to simulate a real world 
 
 ```bash
 # Clone the repository
-git clone [https://github.com/HSBHasib/BPL-Dream.git](https://github.com/HSBHasib/BPL-Dream.git)
+git clone [ https://github.com/HSBHasib/React-BPL-Dream-11-PJ.git ]
 
 # Go into the project folder
 cd React-BPL-Dream-11-PJ
